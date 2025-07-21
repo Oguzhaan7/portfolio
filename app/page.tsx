@@ -5,10 +5,10 @@ const Home = () => {
   return (
     <div className="grid w-full relative">
       <Menu />
-      <section id="about" className="h-max">
+      <section id="about" className="">
         <About />
       </section>
-      <section id="project" className="h-screen ">
+      <section id="project" className="min-h-screen ">
         Project
       </section>
       <section id="testimonials" className="h-screen ">

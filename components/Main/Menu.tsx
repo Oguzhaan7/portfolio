@@ -20,7 +20,7 @@ export const Menu = () => {
   useEffect(() => {
     menuRefs.current = menuRefs.current.slice(0, menuItems.length);
 
-    menuItems.forEach((item, index) => {
+    menuItems.forEach((item) => {
       ScrollTrigger.create({
         trigger: `#${item.id}`,
         start: "top center",
@@ -38,13 +38,13 @@ export const Menu = () => {
   const handleClick = (id: string) => {
     gsap.to(window, {
       duration: 1,
-      scrollTo: { y: `#${id}`, offsetY: 50 },
+      scrollTo: { y: `#${id}`, offsetY: 65 },
       ease: "power2.out",
     });
   };
 
   return (
-    <nav className="flex justify-center sticky top-[50px] z-20">
+    <nav className="flex justify-center sticky top-[50px] z-50 ">
       <div
         className="p-[1px] rounded-[15px] w-max"
         style={{
