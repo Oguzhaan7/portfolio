@@ -15,6 +15,7 @@ const menuItems = [
 
 export const Menu = () => {
   const [active, setActive] = useState("about");
+  const navRef = useRef<HTMLDivElement>(null);
   const menuRefs = useRef<HTMLLIElement[]>([]);
 
   useEffect(() => {
@@ -30,6 +31,33 @@ export const Menu = () => {
       });
     });
 
+    if (navRef.current) {
+      gsap.set(navRef.current, {
+        top: 50,
+      });
+
+      ScrollTrigger.create({
+        trigger: document.body,
+        start: "top+=100 top",
+        onEnter: () => {
+          gsap.to(navRef.current, {
+            top: -5,
+            width: "100%",
+            duration: 0.1,
+            ease: "power2.out",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(navRef.current, {
+            top: 50,
+            width: "fit-content",
+            duration: 0.1,
+            ease: "power2.out",
+          });
+        },
+      });
+    }
+
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
@@ -44,14 +72,14 @@ export const Menu = () => {
   };
 
   return (
-    <nav className="flex justify-center sticky top-[50px] z-50 ">
+    <nav ref={navRef} className="flex justify-center sticky top-[50px] z-50  mx-auto">
       <div
-        className="p-[1px] rounded-[15px] w-max"
+        className="p-[1px] rounded-[15px] w-full"
         style={{
           background: `linear-gradient(45deg, rgba(105,113,162,0.16), rgba(39,42,60,0.37))`,
         }}
       >
-        <ul className="flex items-center h-[66px] gap-8 px-16 rounded-[15px] bg-[linear-gradient(45deg,#04071D_0%,#0C0E23_100%)]">
+        <ul className="flex items-center justify-center h-[66px] gap-8 px-16 rounded-[15px]  bg-[linear-gradient(45deg,#04071D_0%,#0C0E23_100%)]">
           {menuItems.map((item, index) => (
             <li
               key={item.id}
@@ -59,9 +87,7 @@ export const Menu = () => {
                 if (el) menuRefs.current[index] = el;
               }}
               className={`cursor-pointer text-white transition-all duration-100 ${
-                active === item.id
-                  ? " text-white "
-                  : "opacity-60 hover:opacity-100"
+                active === item.id ? " text-white " : "opacity-60 hover:opacity-100"
               }`}
               onClick={() => handleClick(item.id)}
             >

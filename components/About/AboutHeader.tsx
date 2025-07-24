@@ -64,20 +64,14 @@ export const AboutHeader = () => {
 
   return (
     <div className="flex flex-col gap-12 max-w-5xl items-center text-center">
-      <h3
-        ref={titleRef}
-        className="font-medium uppercase text-base  tracking-[0.25em] text-[#E4ECFF]"
-      >
+      <h3 ref={titleRef} className="font-medium uppercase text-base tracking-[0.25em] text-[#E4ECFF]">
         Dynamic Web Magic with Next.js
       </h3>
       <div className="flex flex-col gap-12 items-center" ref={containerRef}>
         <p className="font-bold text-7xl ">
-          Transforming Concepts into Seamless{" "}
-          <span className="text-[#CBACF9]">User Experiences</span>
+          Transforming Concepts into Seamless <span className="text-[#CBACF9]">User Experiences</span>
         </p>
-        <p className="text-2xl text-[#E4ECFF] ">
-          Hi! I’m John Doe, a Next.js Developer based in Russia
-        </p>
+        <p className="text-2xl text-[#E4ECFF] ">Hi! I’m John Doe, a Next.js Developer based in Russia</p>
         <div className="p-[1px] rounded-2xl bg-[linear-gradient(90deg,rgba(105,113,162,0.4),rgba(39,42,60,0.5))] w-fit">
           <button
             ref={buttonRef}

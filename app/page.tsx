@@ -3,7 +3,7 @@ import { About } from "@/components/Main/About";
 
 const Home = () => {
   return (
-    <div className="grid w-full relative">
+    <div className="grid w-full relative select-none">
       <Menu />
       <section id="about" className="">
         <About />

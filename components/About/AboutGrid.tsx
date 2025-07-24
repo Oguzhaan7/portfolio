@@ -9,8 +9,8 @@ export const AboutGrid = () => {
   return (
     <div className="w-full overflow-x-hidden absolute">
       <AboutSpotLight />
-      <div className="grid w-full xl:w[1400px] 2xl:w-[1910px] h-[400px] md:h-[600px] lg:h-[600px] xl:h-[800px] 2xl:h-[1400px] grid-cols-13 divide-x divide-y divide-[#161A31]">
-        <div className="absolute w-full h-full z-10 bg-[radial-gradient(circle,rgba(0,3,25,0)_0%,rgba(0,3,25,1)_100%)]"></div>
+      <div className="grid w-full h-full min-h-screen grid-cols-16 divide-x divide-y divide-[#161A31]">
+        <div className="absolute w-full h-full z-10 bg-[radial-gradient(circle,rgba(0,3,25,0)_0%,rgba(0,3,25,1)_100%)] border-b border-transparent"></div>
         {Array.from({ length: rows * cols }).map((_, i) => {
           const row = Math.floor(i / cols);
           const col = i % cols;
@@ -20,13 +20,15 @@ export const AboutGrid = () => {
               key={i}
               className={clsx("w-full h-full", {
                 "bg-[#0C0F24]":
-                  (row === 0 && col === 8) ||
-                  (row === 1 && col === 0) ||
-                  (row === 2 && col === 4),
+                  (row === 0 && col === 11) ||
+                  (row === 1 && col === 3) ||
+                  (row === 2 && col === 13) ||
+                  (row === 5 && col === 1) ||
+                  (row === 6 && col === 14),
               })}
             >
-              {row === 0 && col === 14 && <AboutFlare />}
-              {row === 1 && col === 7 && <AboutFlare isWhite={true} />}
+              {row === 1 && col === 1 && <AboutFlare />}
+              {row === 1 && col === 13 && <AboutFlare isWhite={true} />}
             </div>
           );
         })}
