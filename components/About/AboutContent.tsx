@@ -79,25 +79,34 @@ export const AboutContent = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 h-full lg:h-[540px] w-full max-w-[1240px]">
+    <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 h-full lg:h-[540px] w-full max-w-[1240px] px-4">
       <div style={boxGradientStyle} className={`${boxStyle} h-full  relative`}>
         <div
           style={{
-            background: "linear-gradient(0deg, #04071D 12%, rgba(12, 14, 35, 0) 100%)",
+            background:
+              "linear-gradient(0deg, #04071D 12%, rgba(12, 14, 35, 0) 100%)",
           }}
           className="absolute h-24 w-full bottom-0 rounded-b-3xl"
         ></div>
-        <span className="absolute w-[400px] text-3xl font-bold bottom-12 left-12">
+        <span className="absolute w-[235px] lg:w-[400px] text-xl lg:text-3xl font-bold bottom-12 left-4 lg:left-12">
           I prioritize client collaboration, fostering open communication
         </span>
         <div className="absolute top-[20%] left-[10%] flex flex-col items-end">
-          <MousePointer2 fill="#D1ACFF" strokeWidth={0} size={32} className="-mr-6 rotate-90" />
-          <span className="block w-[120px] h-[30px] bg-[#D1ACFF]  rounded-l-2xl rounded-br-2xl"></span>
+          <MousePointer2
+            fill="#D1ACFF"
+            strokeWidth={0}
+            className="-mr-6 rotate-90 w-6 h-6 lg:h-8 lg:w-8"
+          />
+          <span className="block w-[70px] h-[15px] lg:w-[120px] lg:h-[30px] bg-[#D1ACFF]  rounded-l-2xl rounded-br-2xl"></span>
         </div>
 
-        <div className="absolute bottom-[20%] right-[10%] flex flex-col items-start">
-          <MousePointer2 fill="#F6F056" strokeWidth={0} size={32} className="-ml-6 " />
-          <span className="block w-[120px] h-[30px] bg-[#F6F056]  rounded-r-2xl rounded-bl-2xl"></span>
+        <div className="absolute bottom-[20%] right-[5%] lg:right-[10%] flex flex-col items-start">
+          <MousePointer2
+            fill="#F6F056"
+            strokeWidth={0}
+            className="-ml-6  w-6 h-6 lg:h-8 lg:w-8"
+          />
+          <span className="block w-[70px] h-[15px] lg:w-[120px] lg:h-[30px] bg-[#F6F056]  rounded-r-2xl rounded-bl-2xl"></span>
         </div>
 
         <Image
@@ -111,8 +120,11 @@ export const AboutContent = () => {
       </div>
 
       <div className="grid gap-8 h-full">
-        <div style={boxGradientStyle} className={`${boxStyle} relative h-[255px] flex items-end  opacity-80`}>
-          <span className=" text-3xl w-[420px] font-bold absolute top-[20%] left-[5%]">
+        <div
+          style={boxGradientStyle}
+          className={`${boxStyle} relative h-[255px] flex items-end  opacity-80`}
+        >
+          <span className="text-xl lg:text-3xl w-[420px] font-bold absolute top-[20%] left-[5%]">
             I’m very flexible with time zone communications
           </span>
           <div className="absolute left-[5%] top-[65%] py-2 px-4 text-[12px] border border-[rgba(54,55,73,0.43)] bg-gradient-to-b from-[#161A31]/60 to-[#06091F]/60 rounded-xl">
@@ -134,10 +146,17 @@ export const AboutContent = () => {
             height={156}
           />
         </div>
-        <div style={boxGradientStyle} className={`${boxStyle} h-[255px] flex justify-between items-center`}>
-          <div className="flex flex-col gap-2 pl-6 ">
-            <span className="w-full text-sm text-[#C1C2D3] font-medium">I constantly try to improve</span>
-            <span className="w-full text-3xl font-bold bottom-12 left-12">My tech stack</span>
+        <div
+          style={boxGradientStyle}
+          className={`${boxStyle} h-[255px] flex justify-between items-center`}
+        >
+          <div className="flex flex-col gap-2 pl-6">
+            <span className="w-full text-sm text-[#C1C2D3] font-medium">
+              I constantly try to improve
+            </span>
+            <span className="w-full text-xl lg:text-3xl font-bold bottom-12 left-12">
+              My tech stack
+            </span>
           </div>
           <div className="flex h-full gap-3 overflow-hidden ">
             <div className=" h-full">
@@ -145,7 +164,7 @@ export const AboutContent = () => {
                 {[...stackA, ...stackA].map((item, index) => (
                   <div
                     key={`left-${index}`}
-                    className="text-sm font-medium flex items-center justify-center bg-[#10132E] rounded-lg w-32 h-[68px] mb-4"
+                    className="text-sm font-medium flex items-center justify-center bg-[#10132E] rounded-lg w-24 h-[50px] lg:w-32 lg:h-[68px] mb-4"
                   >
                     {item}
                   </div>
@@ -158,7 +177,7 @@ export const AboutContent = () => {
                 {[...stackB, ...stackB].map((item, index) => (
                   <div
                     key={`right-${index}`}
-                    className="text-sm font-medium flex items-center justify-center bg-[#10132E] rounded-lg w-32 h-[68px] mb-4"
+                    className="text-sm font-medium flex items-center justify-center bg-[#10132E] rounded-lg w-24 h-[50px] lg:w-32 lg:h-[68px mb-4"
                   >
                     {item}
                   </div>

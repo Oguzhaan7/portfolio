@@ -9,7 +9,7 @@ export const AboutGrid = () => {
   return (
     <div className="w-full overflow-x-hidden absolute">
       <AboutSpotLight />
-      <div className="grid w-full h-full min-h-screen grid-cols-16 divide-x divide-y divide-[#161A31]">
+      <div className="grid w-full h-full min-h-screen grid-cols-8 lg:grid-cols-16 divide-x divide-y divide-[#161A31]">
         <div className="absolute w-full h-full z-10 bg-[radial-gradient(circle,rgba(0,3,25,0)_0%,rgba(0,3,25,1)_100%)] border-b border-transparent"></div>
         {Array.from({ length: rows * cols }).map((_, i) => {
           const row = Math.floor(i / cols);

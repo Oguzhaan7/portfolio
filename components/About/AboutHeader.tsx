@@ -63,21 +63,30 @@ export const AboutHeader = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-12 max-w-5xl items-center text-center">
-      <h3 ref={titleRef} className="font-medium uppercase text-base tracking-[0.25em] text-[#E4ECFF]">
+    <div className="flex flex-col gap-6 lg:gap-12 max-w-5xl items-center text-center">
+      <h3
+        ref={titleRef}
+        className="font-medium uppercase text-xs lg:text-base tracking-[0.25em] text-[#E4ECFF]"
+      >
         Dynamic Web Magic with Next.js
       </h3>
-      <div className="flex flex-col gap-12 items-center" ref={containerRef}>
-        <p className="font-bold text-7xl ">
-          Transforming Concepts into Seamless <span className="text-[#CBACF9]">User Experiences</span>
+      <div
+        className="flex flex-col gap-6 lg:gap-12 items-center"
+        ref={containerRef}
+      >
+        <p className="font-bold text-5xl lg:text-7xl ">
+          Transforming Concepts into Seamless{" "}
+          <span className="text-[#CBACF9]">User Experiences</span>
         </p>
-        <p className="text-2xl text-[#E4ECFF] ">Hi! I’m John Doe, a Next.js Developer based in Russia</p>
-        <div className="p-[1px] rounded-2xl bg-[linear-gradient(90deg,rgba(105,113,162,0.4),rgba(39,42,60,0.5))] w-fit">
+        <p className="text-base lg:text-2xl text-[#E4ECFF] ">
+          Hi! I’m John Doe, a Next.js Developer based in Russia
+        </p>
+        <div className="p-[1px] rounded-lg lg:rounded-2xl bg-[linear-gradient(90deg,rgba(105,113,162,0.4),rgba(39,42,60,0.5))] w-fit">
           <button
             ref={buttonRef}
             onMouseEnter={onHover}
             onMouseLeave={onHoverOut}
-            className="flex items-center justify-center w-52 h-16 bg-[linear-gradient(90deg,#161A31,#06091F)] rounded-2xl text-white gap-3 cursor-pointer"
+            className="flex items-center justify-center w-72 lg:w-52 h-16 bg-[linear-gradient(90deg,#161A31,#06091F)] rounded-lg lg:rounded-2xl text-white gap-3 cursor-pointer"
           >
             See my work
             <MoveUpRight ref={iconRef} />
