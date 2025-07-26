@@ -20,16 +20,16 @@ export const ProjectCard = ({
   techStacks,
 }: ProjectProps) => {
   return (
-    <div className="w-full max-w-2xl lg:max-w-[600px] mx-auto p-[1px] bg-gradient-to-b from-[#36374943] to-[#36374349] rounded-3xl">
-      <div className="w-full lg:w-[600px] min-h-96 h-full flex flex-col gap-2 bg-gradient-to-br from-[#04071D] to-[#0C0E23] rounded-3xl py-1 px-4 lg:px-8 lg:pb-4">
+    <div className="w-full max-w-2xl lg:max-w-[580px] mx-auto p-[1px] bg-gradient-to-b from-[#36374943] to-[#36374349] rounded-3xl">
+      <div className="w-full lg:w-[580px] min-h-96 h-full flex flex-col gap-2 bg-gradient-to-br from-[#04071D] to-[#0C0E23] rounded-3xl py-1 px-4 lg:px-8 lg:pb-4">
         <div className="bg-[#13162D] max-w-[550px] w-full h-[218px] lg:h-[330px] flex mx-auto items-end justify-center px-4 mt-4 rounded-xl relative overflow-hidden">
           <Image
             src={`/images/${image}`}
             alt="Sol Üst Küçük"
-            width={450}
-            height={300}
+            width={500}
+            height={320}
             unoptimized
-            className="object-fill z-20 rounded-lg rotate-2 -mb-5 opacity-85"
+            className="object-contain lg:object-top w-[500px] h-[320px] z-20 rounded-lg rotate-2 -mb-[73px] lg:-mb-5 opacity-85"
           />
           <div
             className="h-96 absolute top-[20%] left-[40%] opacity-40 rotate-45"
