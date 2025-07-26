@@ -53,7 +53,7 @@ export const AboutPromotion = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[2fr_5fr] gap-8 h-max lg:h-[390px] w-full max-w-[1240px] ">
+    <div className="grid grid-cols-1 lg:grid-cols-[2fr_5fr] gap-8 h-max lg:h-[390px] w-full max-w-[1240px] px-4">
       <div className="grid gap-8 h-full relative">
         <div
           style={boxGradientStyle}
@@ -86,7 +86,7 @@ export const AboutPromotion = () => {
             Do you want to start a project together?
           </span>
           <div className="flex items-center justify-center p-[1px] rounded-lg bg-[linear-gradient(45deg,rgba(105,113,162,0.4),rgba(39,42,60,0.5))]">
-            <button className="w-48 h-10 bg-gradient-to-r from-[#161A31] to-[#06091F] rounded-lg font-medium text-sm">
+            <button className="w-48 h-10 bg-gradient-to-r from-[#161A31] to-[#06091F] rounded-lg font-medium text-sm hover:opacity-80 duration-300 cursor-pointer transition-opacity ease-in-out">
               <Copy size={14} className="inline mr-1" />
               Copy my email address
             </button>

@@ -29,7 +29,7 @@ export const About = () => {
         <AboutHeader />
         <div
           ref={containerRef}
-          className="flex flex-col gap-8 lg:gap-16 h-full "
+          className="flex flex-col gap-8 lg:gap-16 h-full"
         >
           <AboutContent />
           <AboutPromotion />
