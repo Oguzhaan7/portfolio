@@ -1,6 +1,7 @@
 import { Menu } from "@/components/Main/Menu";
 import { About } from "@/components/Main/About";
 import { Project } from "@/components/Main/Project";
+import { Testimonial } from "@/components/Main/Testimonial";
 
 const Home = () => {
   return (
@@ -12,8 +13,10 @@ const Home = () => {
       <section id="project">
         <Project />
       </section>
-      {/* <section id="testimonials">Testimonials</section>
-      <section id="contact">Contact</section> */}
+      <section className="overflow-hidden" id="testimonials">
+        <Testimonial />
+      </section>
+      <section id="contact">Contact</section>
     </div>
   );
 };

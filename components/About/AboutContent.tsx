@@ -148,7 +148,7 @@ export const AboutContent = () => {
         </div>
         <div
           style={boxGradientStyle}
-          className={`${boxStyle} h-[255px] flex justify-between items-center`}
+          className={`${boxStyle} h-[255px] flex justify-between items-center overflow-hidden`}
         >
           <div className="flex flex-col gap-2 pl-6">
             <span className="w-full text-sm text-[#C1C2D3] font-medium">
