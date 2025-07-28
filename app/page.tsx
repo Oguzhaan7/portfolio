@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="grid w-full relative select-none">
       <Menu />
-      <section className="overflow-hidden" id="about">
+      <section id="about">
         <About />
       </section>
       <section id="project">
