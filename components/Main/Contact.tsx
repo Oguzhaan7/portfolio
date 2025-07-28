@@ -43,7 +43,9 @@ export const Contact = () => {
         <h3 className="text-3xl lg:text-5xl font-bold ">
           Ready to take <span className="text-[#CBACF9]">your</span> digital presence to the next level?
         </h3>
-        <p className="text-[#C1C2D3]">Reach out to me today and let's discuss how I can help you achieve your goals.</p>
+        <p className="text-[#C1C2D3]">
+          Reach out to me today and let&apos;s discuss how I can help you achieve your goals.
+        </p>
 
         <div className="p-[1px] rounded-lg lg:rounded-2xl bg-[linear-gradient(90deg,rgba(105,113,162,0.4),rgba(39,42,60,0.5))] w-fit mt-8">
           <a
