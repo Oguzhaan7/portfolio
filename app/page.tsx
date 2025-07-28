@@ -4,6 +4,8 @@ import { Project } from "@/components/Main/Project";
 import { Testimonial } from "@/components/Main/Testimonial";
 import { Experience } from "@/components/Main/Experience";
 import { Logos } from "@/components/Main/Logos";
+import { Approach } from "@/components/Main/Approach";
+import { Contact } from "@/components/Main/Contact";
 
 const Home = () => {
   return (
@@ -18,13 +20,18 @@ const Home = () => {
       <section className="overflow-hidden" id="testimonials">
         <Testimonial />
       </section>
-      <section className="w-">
+      <section>
         <Logos />
       </section>
       <section>
         <Experience />
       </section>
-      <section id="contact">Contact</section>
+      <section>
+        <Approach />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   );
 };
