@@ -53,15 +53,13 @@ export const AboutPromotion = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[2fr_5fr] gap-8 h-max lg:h-[390px] w-full max-w-[1240px] px-4">
+    <div className="grid grid-cols-1 lg:grid-cols-[2fr_5fr] gap-8 h-max lg:h-[420px] w-full max-w-[1240px] px-4">
       <div className="grid gap-8 h-full relative">
         <div
           style={boxGradientStyle}
           className={`${boxStyle} flex flex-col items-center justify-between w-full h-[180px]`}
         >
-          <span className="text-2xl font-bold w-80 mt-4 ml-6">
-            Tech enthusiast with a passion for development.
-          </span>
+          <span className="text-2xl font-bold w-80 mt-4 ml-6">Tech enthusiast with a passion for development.</span>
           <div className="flex w-full justify-end px-2">
             <Image
               src="/images/section-skeleton.png"
@@ -82,9 +80,7 @@ export const AboutPromotion = () => {
             }}
             className="absolute left-0 bottom-0 rounded-4xl w-1 h-1 opacity-100"
           ></div>
-          <span className="text-2xl font-bold w-80 mt-4  text-center">
-            Do you want to start a project together?
-          </span>
+          <span className="text-2xl font-bold w-80 mt-4  text-center">Do you want to start a project together?</span>
           <div className="flex items-center justify-center p-[1px] rounded-lg bg-[linear-gradient(45deg,rgba(105,113,162,0.4),rgba(39,42,60,0.5))]">
             <button className="w-48 h-10 bg-gradient-to-r from-[#161A31] to-[#06091F] rounded-lg font-medium text-sm hover:opacity-80 duration-300 cursor-pointer transition-opacity ease-in-out">
               <Copy size={14} className="inline mr-1" />
@@ -93,15 +89,10 @@ export const AboutPromotion = () => {
           </div>
         </div>
       </div>
-      <div
-        style={boxGradientStyle}
-        className={`${boxStyle} min-h-48 h-full w-full relative overflow-hidden`}
-      >
+      <div style={boxGradientStyle} className={`${boxStyle} min-h-48 h-full w-full relative overflow-hidden`}>
         <div className="absolute w-full h-full z-30 flex justify-between">
           <div className="flex flex-col gap-2 justify-center px-4 lg:px-8 absolute bottom-12 lg:bottom-0 lg:relative">
-            <span className="text-[#E4ECFF] tracking-[0.2em] text-sm lg:text-base uppercase">
-              The Inside Scoop
-            </span>
+            <span className="text-[#E4ECFF] tracking-[0.2em] text-sm lg:text-base uppercase">The Inside Scoop</span>
             <span className="text-white text-lg lg:text-3xl font-bold w-44 lg:w-80">
               Currently building a JS Animation library
             </span>
@@ -114,9 +105,7 @@ export const AboutPromotion = () => {
               <div className="flex flex-col gap-2 py-8 px-2 lg:px-6 text-xs lg:text-lg">
                 <div className="flex gap-6 ">
                   <span className="text-[#322e44]/80 font-bold ">1</span>
-                  <p className="text-[#494558] code-line">
-                    &#47;&#47; Importing a single module
-                  </p>
+                  <p className="text-[#494558] code-line">&#47;&#47; Importing a single module</p>
                 </div>
                 <div style={{ wordSpacing: "0.5rem" }} className="flex gap-2">
                   <span className="text-[#322e44]/80 font-bold pr-4">2</span>
@@ -126,33 +115,24 @@ export const AboutPromotion = () => {
                 </div>
                 <div className="flex gap-6 ">
                   <span className="text-[#322e44]/80 font-bold ">3</span>
-                  <span className="text-[#c48162] code-line">
-                    &quot;modulePath&quot;
-                  </span>
+                  <span className="text-[#c48162] code-line">&quot;modulePath&quot;</span>
                 </div>
                 <div className="flex gap-6 ">
                   <span className="text-[#322e44]/80 font-bold">4</span>
                 </div>
                 <div className="flex gap-6 ">
                   <span className="text-[#322e44]/80 font-bold">5</span>
-                  <span className="text-[#494558] code-line">
-                    &#47;&#47; Importing multiple modules
-                  </span>
+                  <span className="text-[#494558] code-line">&#47;&#47; Importing multiple modules</span>
                 </div>
                 <div className="flex gap-2">
                   <span className="text-[#322e44]/80 font-bold pr-4">6</span>
                   <span className="text-[#e67685d8] code-line">import</span>
-                  <span className="text-[#6b63be] code-line">
-                    {"{ module1, module2 } "}
-                  </span>
+                  <span className="text-[#6b63be] code-line">{"{ module1, module2 } "}</span>
                   <span className="text-[#e67685d8] code-line">from</span>
                 </div>
                 <div className="flex gap-6 ">
                   <span className="text-[#322e44]/80 font-bold ">7</span>
-                  <span className="text-[#c48162] code-line">
-                    {" "}
-                    &quot;modulePath&quot;
-                  </span>
+                  <span className="text-[#c48162] code-line"> &quot;modulePath&quot;</span>
                 </div>
               </div>
             </div>
