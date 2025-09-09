@@ -22,7 +22,7 @@ const Test = () => {
         y: "+=5",
         rotation: "+=3",
         duration: 2,
-        stagger: 0.1,
+        stagger: 0.08,
         ease: "power2.out",
       });
 
