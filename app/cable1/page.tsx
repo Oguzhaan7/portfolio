@@ -16,7 +16,6 @@ const Test = () => {
         transformOrigin: "left center",
       });
 
-      // Ana büyüme animasyonu + kıvrımlı efekt
       gsap.to(paths, {
         scale: 1,
         y: "+=5",
@@ -26,7 +25,6 @@ const Test = () => {
         ease: "power2.out",
       });
 
-      // Sürekli kablo sallanma efekti - Y ekseni
       gsap.to(paths, {
         y: "+=3",
         duration: 1.5,
@@ -37,7 +35,6 @@ const Test = () => {
         delay: 2.1,
       });
 
-      // Sürekli hafif rotasyon sallanması
       gsap.to(paths, {
         rotation: "+=2",
         duration: 2,

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const Cable2 = () => {
+const Test = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -11,13 +11,63 @@ const Cable2 = () => {
     if (svgRef.current) {
       const paths = svgRef.current.querySelectorAll("path");
 
-      gsap.set(paths, { opacity: 0 });
+      paths.forEach((path, index) => {
+        const clipId = `clip-${index}`;
+
+        const defs =
+          svgRef.current!.querySelector("defs") ||
+          svgRef.current!.appendChild(
+            document.createElementNS("http://www.w3.org/2000/svg", "defs")
+          );
+        const clipPath = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "clipPath"
+        );
+        clipPath.id = clipId;
+
+        const rect = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "rect"
+        );
+        rect.setAttribute("x", "0");
+        rect.setAttribute("y", "0");
+        rect.setAttribute("width", "0");
+        rect.setAttribute("height", "100%");
+
+        clipPath.appendChild(rect);
+        defs.appendChild(clipPath);
+
+        path.style.clipPath = `url(#${clipId})`;
+      });
+
+      const totalPaths = paths.length;
+      paths.forEach((path, index) => {
+        const clipRect = svgRef.current!.querySelector(`#clip-${index} rect`);
+
+        gsap.to(clipRect, {
+          attr: { width: "100%" },
+          duration: 2,
+          delay: (totalPaths - 1 - index) * 0.1,
+          ease: "power2.out",
+        });
+      });
 
       gsap.to(paths, {
-        opacity: 1,
+        y: "+=3",
         duration: 1.5,
-        stagger: 0.07,
-        ease: "power2.out",
+        stagger: 0.05,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(paths, {
+        rotation: "+=2",
+        duration: 2,
+        stagger: 0.1,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
       });
     }
   }, []);
@@ -636,4 +686,4 @@ const Cable2 = () => {
   );
 };
 
-export default Cable2;
+export default Test;
