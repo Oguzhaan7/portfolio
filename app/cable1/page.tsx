@@ -34,7 +34,7 @@ const Test = () => {
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        delay: 0.5,
+        delay: 2.1,
       });
 
       // Sürekli hafif rotasyon sallanması
@@ -45,7 +45,7 @@ const Test = () => {
         repeat: -1,
         yoyo: true,
         ease: "power1.inOut",
-        delay: 1,
+        delay: 2.2,
       });
     }
   }, []);
