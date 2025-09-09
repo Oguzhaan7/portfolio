@@ -13,6 +13,23 @@ const Map1 = () => {
     const circles = svgRef.current.querySelectorAll("circle");
     gsap.set(circles, { opacity: 0.3 });
 
+    const mapPath = svgRef.current.querySelector('path[fill*="url(#c)"]');
+    if (mapPath) {
+      gsap.set(mapPath, {
+        stroke: "#6080ff",
+        strokeWidth: 1,
+        strokeOpacity: 0,
+      });
+
+      gsap.to(mapPath, {
+        strokeOpacity: 1,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut",
+      });
+    }
+
     const animateRandomCircles = () => {
       const randomCircles: Element[] = [];
       for (let i = 0; i < 5; i++) {
