@@ -15,18 +15,21 @@ const Map1 = () => {
 
     const mapPath = svgRef.current.querySelector('path[fill*="url(#c)"]');
     if (mapPath) {
+      const pathLength = (mapPath as SVGPathElement).getTotalLength();
+      console.log(pathLength);
       gsap.set(mapPath, {
         stroke: "#6080ff",
         strokeWidth: 1,
-        strokeOpacity: 0,
+        strokeOpacity: 1,
+        strokeDasharray: 1000,
+        strokeDashoffset: pathLength,
       });
 
       gsap.to(mapPath, {
-        strokeOpacity: 1,
-        duration: 2,
+        strokeDashoffset: -pathLength,
+        duration: 56,
         repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
+        ease: "none",
       });
     }
 
