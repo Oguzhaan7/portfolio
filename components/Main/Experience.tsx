@@ -37,10 +37,10 @@ export const Experience = () => {
         {experiences.map((experience, index) => {
           return (
             <li
-              className="p-[1px]  bg-gradient-b from-[#36374943] to-[#1c24be49] border-t-4 border-[#161935] w-full h-full lg:w-[600px] lg:h-[190px] rounded-3xl group "
+              className="p-[2px] bg-gradient-to-b from-[#36374943] to-[#36374949] border-t-2 border-[#161935] w-full h-full lg:w-[600px] lg:h-[190px] rounded-3xl group "
               key={index}
             >
-              <div className="w-full h-full min-h-[190px] flex flex-col lg:flex-row gap-4 py-4 px-10 items-start lg:items-center bg-gradient-to-br from-[#04071D] to-[#0C0E23] rounded-2xl ">
+              <div className="w-full h-full min-h-[190px] flex flex-col lg:flex-row gap-4 py-4 px-10 items-start lg:items-center bg-gradient-to-br from-[#04071D] to-[#0C0E23] rounded-3xl ">
                 <Image
                   src={experience.image}
                   width={95}
@@ -52,9 +52,7 @@ export const Experience = () => {
                   <span className="text-lg lg:text-2xl font-bold leading-12 group-hover:text-[#CBACF9] transition-colors duration-300 ease-in-out">
                     {experience.title}
                   </span>
-                  <p className="text-sm lgtext-base font-medium text-[#BEC1DD]">
-                    {experience.description}
-                  </p>
+                  <p className="text-sm lgtext-base font-medium text-[#BEC1DD]">{experience.description}</p>
                 </div>
               </div>
             </li>

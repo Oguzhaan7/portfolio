@@ -23,14 +23,11 @@ export const About = () => {
   }, []);
 
   return (
-    <div className="inline-flex  w-full relative -top-[70px]">
+    <div className="inline-flex overflow-hidden w-full relative -top-[70px]">
       <AboutGrid />
       <div className="w-full min-h-screen h-full flex flex-col items-center gap-12 lg:gap-32 justify-center relative z-40 mt-40 lg:mt-[290px]">
         <AboutHeader />
-        <div
-          ref={containerRef}
-          className="flex flex-col gap-8 lg:gap-16 h-full"
-        >
+        <div ref={containerRef} className="flex flex-col gap-8 lg:gap-16 h-full">
           <AboutContent />
           <AboutPromotion />
         </div>

@@ -3,7 +3,6 @@
 import { MoveUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Link from "next/link";
 
 export const AboutHeader = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,26 +64,19 @@ export const AboutHeader = () => {
 
   return (
     <div className="flex flex-col gap-6 lg:gap-12 max-w-5xl items-center text-center">
-      <h3
-        ref={titleRef}
-        className="font-medium uppercase text-xs lg:text-base tracking-[0.25em] text-[#E4ECFF]"
-      >
+      <h3 ref={titleRef} className="font-medium uppercase text-xs lg:text-base tracking-[0.25em] text-[#E4ECFF]">
         Crafting Scalable Full-Stack Solutions
       </h3>
-      <div
-        className="flex flex-col gap-6 lg:gap-12 items-center"
-        ref={containerRef}
-      >
+      <div className="flex flex-col gap-6 lg:gap-12 items-center" ref={containerRef}>
         <p className="font-bold text-5xl lg:text-7xl">
-          Building Robust Solutions with{" "}
-          <span className="text-[#CBACF9]">Modern Web Technologies</span>
+          Building Robust Solutions with <span className="text-[#CBACF9]">Modern Web Technologies</span>
         </p>
         <p className="text-base lg:text-2xl text-[#E4ECFF]">
-          Hi! I’m Oguzhan, a Full-Stack Developer skilled in .NET, Node.js,
-          GraphQL, and modern frameworks like Next.js and Nuxt.js.
+          Hi! I’m Oguzhan, a Full-Stack Developer skilled in .NET, Node.js, GraphQL, and modern frameworks like Next.js
+          and Nuxt.js.
         </p>
         <div className="p-[1px] rounded-lg lg:rounded-2xl bg-[linear-gradient(90deg,rgba(105,113,162,0.4),rgba(39,42,60,0.5))] w-fit">
-          <Link
+          <a
             href="https://github.com/Oguzhaan7"
             target="_blank"
             ref={linkRef}
@@ -94,7 +86,7 @@ export const AboutHeader = () => {
           >
             See my work
             <MoveUpRight ref={iconRef} />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

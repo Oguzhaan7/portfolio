@@ -1,8 +1,22 @@
+# Minimal Portfolio for Web Developers
+
+A modern, minimal portfolio website for web developers, designed to showcase skills, experience, and projects with a clean and professional look. Built using Next.js, TypeScript, and Tailwind CSS, this project is inspired by the community Figma design and deployed on Vercel.
+
+---
+
+## Live Demo
+
+Visit the live site: [oguzhandag.dev](https://oguzhandag.dev/)
+
+## Figma Design Reference
+
+See the design: [Minimal Portfolio for Web Developers - Community](https://www.figma.com/design/DuLNiRBpdODnyim4zbDNWn/Minimal-Portfolio-for-Web-Developers)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+To run the development server:
 
 ```bash
 npm run dev
@@ -14,20 +28,30 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Tech Stack
+
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS, PostCSS
+- **Icons & Images:** Custom SVGs, PNGs
+- **Deployment:** Vercel
+- **Animation:** GSAP
+
+---
+
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about Next.js, check out:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs) - Features and API reference
+- [Learn Next.js](https://nextjs.org/learn) - Interactive tutorial
+- [Next.js GitHub repository](https://github.com/vercel/next.js)
 
 ## Deploy on Vercel
 
