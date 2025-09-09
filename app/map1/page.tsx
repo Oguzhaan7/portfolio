@@ -3,12 +3,44 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const Test = () => {
+const Map1 = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const startCircleAnimations = () => {
+    if (!svgRef.current) return;
+
+    const circles = svgRef.current.querySelectorAll("circle");
+    gsap.set(circles, { opacity: 0.3 });
+
+    const animateRandomCircles = () => {
+      const randomCircles: Element[] = [];
+      for (let i = 0; i < 5; i++) {
+        randomCircles.push(circles[Math.floor(Math.random() * circles.length)]);
+      }
+
+      gsap.to(randomCircles, {
+        opacity: 1,
+        scale: 2,
+        duration: 0.6,
+        stagger: 0.02,
+        repeat: 1,
+        yoyo: true,
+        transformOrigin: "center center",
+        onComplete: () => {
+          gsap.set(randomCircles, { opacity: 0.3, scale: 1 });
+        },
+      });
+    };
+
+    setInterval(animateRandomCircles, 1000);
+  };
+
   useEffect(() => {
     if (svgRef.current) {
+      const circles = svgRef.current.querySelectorAll("circle");
+      gsap.set(circles, { opacity: 0 });
+
       const verticalPaths = svgRef.current.querySelectorAll(
         'path:not([fill*="url(#c)"])'
       );
@@ -20,45 +52,17 @@ const Test = () => {
           {
             scaleY: 1,
             duration: 0.5,
-            delay: index * 0.02,
+            delay: index * 0.1,
             ease: "power2.out",
+            onComplete:
+              index === verticalPaths.length - 1
+                ? () => {
+                    startCircleAnimations();
+                  }
+                : undefined,
           }
         );
       });
-    }
-  }, []);
-
-  useEffect(() => {
-    if (svgRef.current) {
-      const circles = svgRef.current.querySelectorAll("circle");
-
-      gsap.set(circles, { opacity: 0 });
-
-      const animateRandomCircles = () => {
-        const randomCircles: Element[] = [];
-        for (let i = 0; i < 5; i++) {
-          randomCircles.push(
-            circles[Math.floor(Math.random() * circles.length)]
-          );
-        }
-
-        gsap.to(randomCircles, {
-          opacity: 1,
-          scale: 2,
-          duration: 0.6,
-          stagger: 0.02,
-          repeat: 1,
-          yoyo: true,
-          transformOrigin: "center center",
-          onComplete: () => {
-            gsap.set(randomCircles, { opacity: 0.3, scale: 1 });
-          },
-        });
-      };
-
-      const interval = setInterval(animateRandomCircles, 1000);
-
-      return () => clearInterval(interval);
     }
   }, []);
 
@@ -1593,4 +1597,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Map1;
