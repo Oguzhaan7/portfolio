@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const Cable1 = () => {
+const Test = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -16,11 +16,36 @@ const Cable1 = () => {
         transformOrigin: "left center",
       });
 
+      // Ana büyüme animasyonu + kıvrımlı efekt
       gsap.to(paths, {
         scale: 1,
-        duration: 1,
-        stagger: 0.01,
+        y: "+=5",
+        rotation: "+=3",
+        duration: 2,
+        stagger: 0.1,
         ease: "power2.out",
+      });
+
+      // Sürekli kablo sallanma efekti - Y ekseni
+      gsap.to(paths, {
+        y: "+=3",
+        duration: 1.5,
+        stagger: 0.05,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 0.5,
+      });
+
+      // Sürekli hafif rotasyon sallanması
+      gsap.to(paths, {
+        rotation: "+=2",
+        duration: 2,
+        stagger: 0.1,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        delay: 1,
       });
     }
   }, []);
@@ -639,4 +664,4 @@ const Cable1 = () => {
   );
 };
 
-export default Cable1;
+export default Test;
