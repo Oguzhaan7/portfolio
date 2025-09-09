@@ -3,15 +3,36 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const Map1 = () => {
+const Test = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (svgRef.current) {
+      const verticalPaths = svgRef.current.querySelectorAll(
+        'path:not([fill*="url(#c)"])'
+      );
+
+      verticalPaths.forEach((path, index) => {
+        gsap.fromTo(
+          path,
+          { scaleY: 0, transformOrigin: "bottom" },
+          {
+            scaleY: 1,
+            duration: 0.5,
+            delay: index * 0.02,
+            ease: "power2.out",
+          }
+        );
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (svgRef.current) {
       const circles = svgRef.current.querySelectorAll("circle");
 
-      gsap.set(circles, { opacity: 0.3 });
+      gsap.set(circles, { opacity: 0 });
 
       const animateRandomCircles = () => {
         const randomCircles: Element[] = [];
@@ -1572,4 +1593,4 @@ const Map1 = () => {
   );
 };
 
-export default Map1;
+export default Test;
