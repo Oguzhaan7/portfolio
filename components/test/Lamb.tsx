@@ -84,13 +84,17 @@ export const Lamb = () => {
     const lampPaths = svgRef.current.querySelectorAll('path[d*="M418.779"]');
     if (lampPaths.length > 0) {
       gsap.to(lampPaths, {
-        fill: "#ffff99",
-        filter: "drop-shadow(0 0 10px #ffc499) drop-shadow(0 0 20px #ffb000)",
-        duration: 0.03,
+        fill: "#fffacd",
+        filter: `
+          drop-shadow(0 0 5px rgba(255, 255, 150, 0.8))
+          drop-shadow(0 0 15px rgba(255, 255, 100, 0.6))
+          drop-shadow(0 0 25px rgba(255, 245, 50, 0.4))
+          drop-shadow(0 0 35px rgba(255, 235, 0, 0.2))
+        `,
+        duration: 2,
         repeat: -1,
-        repeatDelay: 2,
-        ease: "none",
         yoyo: true,
+        ease: "sine.inOut",
       });
     }
   }, []);
