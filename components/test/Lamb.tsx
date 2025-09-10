@@ -104,8 +104,8 @@ export const Lamb = () => {
       ref={svgRef}
       xmlns="http://www.w3.org/2000/svg"
       width="492"
-      height="227"
-      viewBox="0 0 492 227"
+      height="400"
+      viewBox="0 0 620 400"
       fill="none"
     >
       <g clipPath="url(#clip0_618_236)">
@@ -598,7 +598,7 @@ export const Lamb = () => {
           <stop offset="1" stopColor="#46139E" />
         </linearGradient>
         <clipPath id="clip0_618_236">
-          <rect width="492" height="227" fill="white" />
+          <rect width="620" height="2900" fill="white" />
         </clipPath>
       </defs>
     </svg>
