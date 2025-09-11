@@ -21,13 +21,13 @@ export const Map = () => {
       gsap.to(randomCircles, {
         opacity: 1,
         duration: 0.6,
+        scale: 2,
         stagger: 0.02,
         repeat: 1,
         yoyo: true,
-        ease: "power2.in",
         transformOrigin: "center center",
         onComplete: () => {
-          gsap.set(randomCircles, { opacity: 0.3 });
+          gsap.set(randomCircles, { opacity: 0.3, scale: 1 });
         },
       });
     };
@@ -37,26 +37,6 @@ export const Map = () => {
 
   useEffect(() => {
     if (svgRef.current) {
-      const mapPath = svgRef.current.querySelector('path[fill*="url(#c)"]');
-      if (mapPath) {
-        const pathLength = (mapPath as SVGPathElement).getTotalLength();
-
-        gsap.set(mapPath, {
-          stroke: "#6080ff",
-          strokeWidth: 1,
-          strokeOpacity: 1,
-          strokeDasharray: 1000,
-          strokeDashoffset: pathLength,
-        });
-
-        gsap.to(mapPath, {
-          strokeDashoffset: -pathLength,
-          duration: 56,
-          repeat: -1,
-          ease: "none",
-        });
-      }
-
       const circles = svgRef.current.querySelectorAll("circle");
       gsap.set(circles, { opacity: 0.0 });
 
