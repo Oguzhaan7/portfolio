@@ -52,7 +52,8 @@ export const Cable = () => {
       xmlns="http://www.w3.org/2000/svg"
       width="567"
       height="208"
-      viewBox="0 0 567 208"
+      viewBox="0 0 567 250"
+      style={{ transform: "rotate(-3deg" }}
       fill="none"
     >
       <path

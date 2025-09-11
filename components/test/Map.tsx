@@ -12,26 +12,6 @@ export const Map = () => {
     const circles = svgRef.current.querySelectorAll("circle");
     gsap.set(circles, { opacity: 0.3 });
 
-    const mapPath = svgRef.current.querySelector('path[fill*="url(#c)"]');
-    if (mapPath) {
-      const pathLength = (mapPath as SVGPathElement).getTotalLength();
-
-      gsap.set(mapPath, {
-        stroke: "#6080ff",
-        strokeWidth: 1,
-        strokeOpacity: 1,
-        strokeDasharray: 1000,
-        strokeDashoffset: pathLength,
-      });
-
-      gsap.to(mapPath, {
-        strokeDashoffset: -pathLength,
-        duration: 56,
-        repeat: -1,
-        ease: "none",
-      });
-    }
-
     const animateRandomCircles = () => {
       const randomCircles: Element[] = [];
       for (let i = 0; i < 5; i++) {
@@ -40,14 +20,14 @@ export const Map = () => {
 
       gsap.to(randomCircles, {
         opacity: 1,
-        scale: 2,
         duration: 0.6,
         stagger: 0.02,
         repeat: 1,
         yoyo: true,
+        ease: "power2.in",
         transformOrigin: "center center",
         onComplete: () => {
-          gsap.set(randomCircles, { opacity: 0.3, scale: 1 });
+          gsap.set(randomCircles, { opacity: 0.3 });
         },
       });
     };
@@ -57,8 +37,28 @@ export const Map = () => {
 
   useEffect(() => {
     if (svgRef.current) {
+      const mapPath = svgRef.current.querySelector('path[fill*="url(#c)"]');
+      if (mapPath) {
+        const pathLength = (mapPath as SVGPathElement).getTotalLength();
+
+        gsap.set(mapPath, {
+          stroke: "#6080ff",
+          strokeWidth: 1,
+          strokeOpacity: 1,
+          strokeDasharray: 1000,
+          strokeDashoffset: pathLength,
+        });
+
+        gsap.to(mapPath, {
+          strokeDashoffset: -pathLength,
+          duration: 56,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+
       const circles = svgRef.current.querySelectorAll("circle");
-      gsap.set(circles, { opacity: 0 });
+      gsap.set(circles, { opacity: 0.0 });
 
       const verticalPaths = svgRef.current.querySelectorAll(
         'path:not([fill*="url(#c)"])'
@@ -70,8 +70,8 @@ export const Map = () => {
           { scaleY: 0, transformOrigin: "bottom" },
           {
             scaleY: 1,
-            duration: 0.5,
-            delay: index * 0.1,
+            duration: 0.2,
+            delay: index * 0.05,
             ease: "power2.out",
             onComplete:
               index === verticalPaths.length - 1
