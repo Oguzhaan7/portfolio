@@ -19,14 +19,14 @@ export const Cable = () => {
         scale: 1,
         y: "+=5",
         rotation: "+=3",
-        duration: 2,
-        stagger: 0.08,
+        duration: 1,
+        stagger: 0.05,
         ease: "power2.out",
       });
 
       gsap.to(paths, {
         y: "+=3",
-        duration: 1.5,
+        duration: 1.2,
         stagger: 0.05,
         repeat: -1,
         yoyo: true,
@@ -36,7 +36,7 @@ export const Cable = () => {
 
       gsap.to(paths, {
         rotation: "+=2",
-        duration: 2,
+        duration: 1.7,
         stagger: 0.1,
         repeat: -1,
         yoyo: true,
@@ -53,7 +53,7 @@ export const Cable = () => {
       width="567"
       height="208"
       viewBox="0 0 567 250"
-      style={{ transform: "rotate(-5deg" }}
+      style={{ transform: "rotate(-4deg" }}
       fill="none"
     >
       <path
