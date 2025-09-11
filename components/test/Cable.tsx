@@ -53,7 +53,7 @@ export const Cable = () => {
       width="567"
       height="208"
       viewBox="0 0 567 250"
-      style={{ transform: "rotate(-3deg" }}
+      style={{ transform: "rotate(-5deg" }}
       fill="none"
     >
       <path
