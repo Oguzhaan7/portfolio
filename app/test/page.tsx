@@ -6,6 +6,7 @@ import { Clock } from "@/components/test/Clock";
 import { Lamb } from "@/components/test/Lamb";
 import { Macbook } from "@/components/test/Macbook";
 import { Map } from "@/components/test/Map";
+import { CircleMap } from "@/components/test/CircleMap";
 
 const Test = () => {
   const [activeTab, setActiveTab] = useState("cable");
@@ -16,6 +17,7 @@ const Test = () => {
     { id: "lamb", name: "Lamb", component: <Lamb /> },
     { id: "macbook", name: "Macbook", component: <Macbook /> },
     { id: "map", name: "Map", component: <Map /> },
+    { id: "circleMap", name: "Circle Map", component: <CircleMap /> },
   ];
 
   return (
