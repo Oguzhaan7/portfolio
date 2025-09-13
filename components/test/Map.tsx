@@ -51,7 +51,7 @@ export const Map = () => {
           {
             scaleY: 1,
             duration: 0.2,
-            delay: index * 0.05,
+            delay: index * 0.02,
             ease: "power2.out",
             onComplete:
               index === verticalPaths.length - 1

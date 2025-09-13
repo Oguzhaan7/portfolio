@@ -19,8 +19,8 @@ export const Cable = () => {
         scale: 1,
         y: "+=5",
         rotation: "+=3",
-        duration: 1,
-        stagger: 0.05,
+        duration: 0.7,
+        stagger: 0.02,
         ease: "power2.out",
       });
 
