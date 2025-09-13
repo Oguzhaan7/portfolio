@@ -24,20 +24,22 @@ export const CircleMap = () => {
     });
 
     const sparkleAnimation = () => {
-      const randomPaths = gsap.utils.shuffle([...paths]).slice(0, 10);
+      const randomPaths = gsap.utils.shuffle([...paths]).slice(0, 20);
 
       gsap.to(randomPaths, {
         scale: 2,
         opacity: 2,
-        duration: 0.2,
+        duration: 0.3,
         ease: "power2.out",
-        yoyo: true,
-        repeat: 1,
+        stagger: 0.05,
         transformOrigin: "center",
+        onComplete: () => {
+          gsap.set(randomPaths, { scale: 1, opacity: 1 });
+        },
       });
     };
 
-    const interval = setInterval(sparkleAnimation, 300);
+    const interval = setInterval(sparkleAnimation, 1000);
 
     return () => clearInterval(interval);
   }, []);
