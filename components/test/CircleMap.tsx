@@ -11,7 +11,7 @@ export const CircleMap = () => {
 
     gsap.set(paths, { opacity: 0 });
 
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 4 });
 
     tl.to(paths, {
       opacity: 1,
@@ -21,6 +21,15 @@ export const CircleMap = () => {
         from: "random",
       },
       ease: "power3.out",
+    })
+    .to(paths, {
+      opacity: 0,
+      duration: 0.01,
+      stagger: {
+        amount: 0.6,
+        from: "random",
+      },
+      ease: "power3.in",
     });
 
   }, []);
