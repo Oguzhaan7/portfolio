@@ -27,14 +27,20 @@ export const CircleMap = () => {
       const randomPaths = gsap.utils.shuffle([...paths]).slice(0, 20);
 
       gsap.to(randomPaths, {
-        scale: 2,
+        scale: 1.5,
         opacity: 2,
         duration: 0.3,
         ease: "power2.out",
         stagger: 0.05,
         transformOrigin: "center",
         onComplete: () => {
-          gsap.set(randomPaths, { scale: 1, opacity: 1 });
+          gsap.to(randomPaths, {
+            scale: 1,
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.in",
+            stagger: 0.03
+          });
         },
       });
     };
