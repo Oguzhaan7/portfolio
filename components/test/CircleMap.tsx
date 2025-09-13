@@ -23,31 +23,6 @@ export const CircleMap = () => {
       ease: "power3.out",
     });
 
-    const sparkleAnimation = () => {
-      const randomPaths = gsap.utils.shuffle([...paths]).slice(0, 20);
-
-      gsap.to(randomPaths, {
-        scale: 1.5,
-        opacity: 2,
-        duration: 0.3,
-        ease: "power2.out",
-        stagger: 0.05,
-        transformOrigin: "center",
-        onComplete: () => {
-          gsap.to(randomPaths, {
-            scale: 1,
-            opacity: 1,
-            duration: 0.3,
-            ease: "power2.in",
-            stagger: 0.03
-          });
-        },
-      });
-    };
-
-    const interval = setInterval(sparkleAnimation, 1000);
-
-    return () => clearInterval(interval);
   }, []);
   return (
     <svg
