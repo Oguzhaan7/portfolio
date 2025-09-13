@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export const CircleMap = () => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -7,21 +7,39 @@ export const CircleMap = () => {
   useEffect(() => {
     if (!svgRef.current) return;
 
-    const paths = svgRef.current.querySelectorAll('path');
-    
+    const paths = svgRef.current.querySelectorAll("path");
+
     gsap.set(paths, { opacity: 0 });
 
     const tl = gsap.timeline();
-    
+
     tl.to(paths, {
       opacity: 1,
       duration: 0.01,
       stagger: {
-        amount: 0.3,
-        from: 'random'
+        amount: 0.6,
+        from: "random",
       },
-      ease: 'power3.out'
+      ease: "power3.out",
     });
+
+    const sparkleAnimation = () => {
+      const randomPaths = gsap.utils.shuffle([...paths]).slice(0, 5);
+      
+      gsap.to(randomPaths, {
+        scale: 1.5,
+        opacity: 2,
+        duration: 0.15,
+        ease: "power2.out",
+        yoyo: true,
+        repeat: 1,
+        transformOrigin: "center"
+      });
+    };
+
+    const interval = setInterval(sparkleAnimation, 300);
+
+    return () => clearInterval(interval);
 
   }, []);
   return (
