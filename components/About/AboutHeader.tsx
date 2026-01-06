@@ -65,7 +65,7 @@ export const AboutHeader = () => {
   return (
     <div className="flex flex-col gap-6 lg:gap-12 max-w-5xl items-center text-center">
       <h3 ref={titleRef} className="font-medium uppercase text-xs lg:text-base tracking-[0.25em] text-[#E4ECFF]">
-        Crafting Scalable Full-Stack Solutions Test
+        Crafting Scalable Full-Stack Solutions
       </h3>
       <div className="flex flex-col gap-6 lg:gap-12 items-center" ref={containerRef}>
         <p className="font-bold text-5xl lg:text-7xl">
