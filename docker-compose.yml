@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio
+    restart: unless-stopped
+    expose:
+      - "3000"
+    networks:
+      - proxy-network
+    environment:
+      NODE_ENV: production
+
+networks:
+  proxy-network:
+    external: true
